@@ -114,7 +114,7 @@ object SupportedAnalyzers {
       Some(new Analyzer() {
         def createComponents(fieldName: String, reader: Reader): TokenStreamComponents = {
           new TokenStreamComponents(new NGramTokenizer(IndexService.version, reader,
-            options.get("mingram").get.asInstanceOf[Int], options.get("maxgram").get.asInstanceOf[Int]))
+            1, 3))
         }
       })
     case "edgengram" =>
